@@ -1,26 +1,51 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const thumbnail = project.media[0];
+
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="block rounded-lg border border-black/10 dark:border-white/10 p-5 hover:border-black/30 dark:hover:border-white/30 transition-colors"
+      className="group block overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-white/[0.03]"
     >
-      <h3 className="font-semibold">{project.title}</h3>
-      <p className="text-sm text-black/60 dark:text-white/60 mt-1">
-        {project.course} &middot; {project.year}
-      </p>
-      <p className="mt-3 text-sm">{project.summary}</p>
-      <div className="mt-4 flex flex-wrap gap-2">
-        {project.tech.map((t) => (
-          <span
-            key={t}
-            className="text-xs rounded-full bg-black/5 dark:bg-white/10 px-2 py-1"
-          >
-            {t}
-          </span>
-        ))}
+      <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-accent-soft to-accent/20">
+        {thumbnail ? (
+          <Image
+            src={thumbnail.src}
+            alt={thumbnail.alt}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center text-3xl font-bold text-accent/40">
+            {project.title
+              .split(" ")
+              .map((w) => w[0])
+              .slice(0, 2)
+              .join("")}
+          </div>
+        )}
+      </div>
+      <div className="p-5">
+        <h3 className="font-semibold transition-colors group-hover:text-accent">
+          {project.title}
+        </h3>
+        <p className="mt-1 text-sm text-black/60 dark:text-white/60">
+          {project.course} &middot; {project.year}
+        </p>
+        <p className="mt-3 text-sm">{project.summary}</p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {project.tech.map((t) => (
+            <span
+              key={t}
+              className="rounded-full bg-accent-soft px-2 py-1 text-xs text-accent"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
       </div>
     </Link>
   );

@@ -20,52 +20,60 @@ export default async function ProjectPage({
   }
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16">
-      <Link href="/projects" className="text-sm underline">
+    <div className="mx-auto max-w-3xl px-6 py-16">
+      <Link
+        href="/projects"
+        className="text-sm font-medium text-accent hover:underline"
+      >
         &larr; All projects
       </Link>
 
-      <h1 className="mt-4 text-3xl font-bold">{project.title}</h1>
-      <p className="mt-1 text-black/60 dark:text-white/60">
+      <h1 className="mt-4 text-4xl font-bold tracking-tight">
+        {project.title}
+      </h1>
+      <p className="mt-2 text-black/60 dark:text-white/60">
         {project.course} &middot; {project.year}
       </p>
 
-      <p className="mt-6 text-lg">{project.summary}</p>
+      <p className="mt-6 text-lg leading-relaxed">{project.summary}</p>
 
       <div className="mt-4 flex flex-wrap gap-2">
         {project.tech.map((t) => (
           <span
             key={t}
-            className="text-xs rounded-full bg-black/5 dark:bg-white/10 px-2 py-1"
+            className="rounded-full bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent"
           >
             {t}
           </span>
         ))}
       </div>
 
-      <section className="mt-10">
+      <section className="mt-12">
         <h2 className="text-lg font-semibold">What I learned</h2>
-        <ul className="mt-3 list-disc pl-5 space-y-1">
+        <ul className="mt-3 space-y-2">
           {project.whatILearned.map((point) => (
-            <li key={point}>{point}</li>
+            <li key={point} className="flex gap-2 text-black/80 dark:text-white/80">
+              <span className="text-accent">&#9656;</span>
+              {point}
+            </li>
           ))}
         </ul>
       </section>
 
-      <section className="mt-10">
+      <section className="mt-12">
         <h2 className="text-lg font-semibold">Gallery</h2>
         {project.media.length === 0 ? (
-          <div className="mt-3 rounded-lg border border-dashed border-black/20 dark:border-white/20 p-6 text-sm text-black/50 dark:text-white/50">
+          <div className="mt-3 rounded-xl border border-dashed border-black/15 p-6 text-sm text-black/50 dark:border-white/15 dark:text-white/50">
             Drop screenshots or video into{" "}
-            <code className="text-xs bg-black/5 dark:bg-white/10 px-1 rounded">
+            <code className="rounded bg-black/5 px-1 text-xs dark:bg-white/10">
               public/projects/{project.slug}/
             </code>{" "}
             and reference them in this project&apos;s{" "}
-            <code className="text-xs bg-black/5 dark:bg-white/10 px-1 rounded">
+            <code className="rounded bg-black/5 px-1 text-xs dark:bg-white/10">
               media
             </code>{" "}
             array in{" "}
-            <code className="text-xs bg-black/5 dark:bg-white/10 px-1 rounded">
+            <code className="rounded bg-black/5 px-1 text-xs dark:bg-white/10">
               src/data/projects.ts
             </code>
             .
@@ -80,14 +88,14 @@ export default async function ProjectPage({
                   alt={m.alt}
                   width={800}
                   height={600}
-                  className="rounded-lg border border-black/10 dark:border-white/10"
+                  className="rounded-xl border border-black/10 dark:border-white/10"
                 />
               ) : (
                 <video
                   key={m.src}
                   src={m.src}
                   controls
-                  className="rounded-lg border border-black/10 dark:border-white/10 w-full"
+                  className="w-full rounded-xl border border-black/10 dark:border-white/10"
                 />
               )
             )}
