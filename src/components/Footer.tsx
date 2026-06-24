@@ -8,15 +8,15 @@ export default function Footer() {
         <div>
           <p className="font-medium">Let&apos;s connect</p>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:jingruitw1@hotmail.com"
             className="text-sm text-black/60 hover:text-accent dark:text-white/60"
           >
-            your.email@example.com
+            jingruitw1@hotmail.com
           </a>
         </div>
         <div className="flex gap-4">
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/JonathanHJR"
             aria-label="GitHub"
             className="rounded-full border border-black/10 p-2.5 transition-colors hover:border-accent hover:text-accent dark:border-white/10"
           >
@@ -25,7 +25,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com/in/your-username"
+            href="https://www.linkedin.com/in/jing-rui-ho/"
             aria-label="LinkedIn"
             className="rounded-full border border-black/10 p-2.5 transition-colors hover:border-accent hover:text-accent dark:border-white/10"
           >
