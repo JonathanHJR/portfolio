@@ -5,7 +5,7 @@ export default function Nav() {
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/70 backdrop-blur-md dark:border-white/10 dark:bg-black/60">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <Link href="/" className="font-semibold tracking-tight">
-          Your Name
+          Jing Rui
         </Link>
         <div className="flex gap-8 text-sm font-medium text-black/70 dark:text-white/70">
           <Link href="/projects" className="hover:text-accent transition-colors">
