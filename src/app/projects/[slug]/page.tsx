@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getProjectBySlug, projects } from "@/data/projects";
+import CategoryBadge from "@/components/CategoryBadge";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -28,7 +29,10 @@ export default async function ProjectPage({
         &larr; All projects
       </Link>
 
-      <h1 className="mt-4 text-4xl font-bold tracking-tight">
+      <div className="mt-4">
+        <CategoryBadge category={project.category} />
+      </div>
+      <h1 className="mt-3 text-4xl font-bold tracking-tight">
         {project.title}
       </h1>
       <p className="mt-2 text-black/60 dark:text-white/60">

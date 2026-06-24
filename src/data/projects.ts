@@ -4,9 +4,18 @@ export type ProjectMedia = {
   alt: string;
 };
 
+export type ProjectCategory = "Academic" | "Work" | "Personal";
+
+export const projectCategories: ProjectCategory[] = [
+  "Academic",
+  "Work",
+  "Personal",
+];
+
 export type Project = {
   slug: string;
   title: string;
+  category: ProjectCategory;
   course: string;
   year: string;
   summary: string;
@@ -21,6 +30,7 @@ export const projects: Project[] = [
   {
     slug: "example-project-one",
     title: "Example Project One",
+    category: "Academic",
     course: "Course name, Year X",
     year: "2025",
     summary:
@@ -38,7 +48,8 @@ export const projects: Project[] = [
   {
     slug: "example-project-two",
     title: "Example Project Two",
-    course: "Course name, Year X",
+    category: "Work",
+    course: "Company/role name, Year X",
     year: "2025",
     summary:
       "One or two sentences on what this project is and the problem it solves.",
@@ -52,7 +63,8 @@ export const projects: Project[] = [
   {
     slug: "example-project-three",
     title: "Example Project Three",
-    course: "Course name, Year X",
+    category: "Personal",
+    course: "Side project, Year X",
     year: "2024",
     summary:
       "One or two sentences on what this project is and the problem it solves.",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Project } from "@/data/projects";
+import CategoryBadge from "@/components/CategoryBadge";
 
 export default function ProjectCard({ project }: { project: Project }) {
   const thumbnail = project.media[0];
@@ -11,6 +12,9 @@ export default function ProjectCard({ project }: { project: Project }) {
       className="group block overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-white/[0.03]"
     >
       <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-accent-soft to-accent/20">
+        <div className="absolute left-3 top-3 z-10">
+          <CategoryBadge category={project.category} />
+        </div>
         {thumbnail ? (
           <Image
             src={thumbnail.src}
