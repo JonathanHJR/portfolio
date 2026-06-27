@@ -34,7 +34,7 @@ export const projects: Project[] = [
     course: "CSD1401 (Team Project), DigiPen Singapore",
     year: "2023",
     summary:
-      "A side-scrolling, obstacle-dodging arcade game built in C with the CProcessing library, made with a 5-person team for DigiPen's intro programming course.",
+      "A 2D endless runner built in C with the CProcessing library, where the player dodges obstacles while the camera keeps scrolling forward. Made with a 5-person team for DigiPen's intro programming course.",
     whatILearned: [
       "Built the main menu, settings, character selection, and credits screens, plus a leaderboard with persistent save-file data",
       "Wired up score tracking, camera movement, and the game's music and sound effects",
@@ -42,6 +42,11 @@ export const projects: Project[] = [
     ],
     tech: ["C", "CProcessing", "Git"],
     media: [
+      {
+        type: "image",
+        src: "/projects/geo-surfers/thumbnail.jpg",
+        alt: "Geo Surfers gameplay screenshot showing the player dodging an obstacle",
+      },
       {
         type: "video",
         src: "/projects/geo-surfers/gameplay.mp4",
