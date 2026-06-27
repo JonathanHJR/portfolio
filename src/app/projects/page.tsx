@@ -2,7 +2,7 @@ import ProjectsGrid from "@/components/ProjectsGrid";
 import { projects } from "@/data/projects";
 
 export const metadata = {
-  title: "Projects — Jing Rui",
+  title: "Projects",
 };
 
 export default function ProjectsPage() {
