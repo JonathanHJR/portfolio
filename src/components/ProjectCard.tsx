@@ -4,7 +4,7 @@ import type { Project } from "@/data/projects";
 import CategoryBadge from "@/components/CategoryBadge";
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const thumbnail = project.media[0];
+  const thumbnail = project.media.find((m) => m.type === "image");
 
   return (
     <Link

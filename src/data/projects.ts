@@ -28,21 +28,25 @@ export type Project = {
 // Drop screenshots/videos into public/projects/<slug>/ and reference them in `media` below.
 export const projects: Project[] = [
   {
-    slug: "example-project-one",
-    title: "Example Project One",
+    slug: "geo-surfers",
+    title: "Geo Surfers",
     category: "Academic",
-    course: "Course name, Year X",
-    year: "2025",
+    course: "CSD1401 (Team Project), DigiPen Singapore",
+    year: "2023",
     summary:
-      "One or two sentences on what this project is and the problem it solves.",
+      "A side-scrolling, obstacle-dodging arcade game built in C with the CProcessing library, made with a 5-person team for DigiPen's intro programming course.",
     whatILearned: [
-      "Key concept or skill you picked up",
-      "A challenge you overcame and how",
-      "Something you'd do differently next time",
+      "Built the main menu, settings, character selection, and credits screens, plus a leaderboard with persistent save-file data",
+      "Wired up score tracking, camera movement, and the game's music and sound effects",
+      "Coordinated a 5-person C codebase over git, resolving merge conflicts across shared files like mainmenu.c and game.c",
     ],
-    tech: ["Tech 1", "Tech 2", "Tech 3"],
+    tech: ["C", "CProcessing", "Git"],
     media: [
-      // { type: "image", src: "/projects/example-project-one/screenshot1.png", alt: "Screenshot of the dashboard" },
+      {
+        type: "video",
+        src: "/projects/geo-surfers/gameplay.mp4",
+        alt: "Geo Surfers gameplay clip",
+      },
     ],
   },
   {
