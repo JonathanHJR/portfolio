@@ -34,7 +34,7 @@ export const projects: Project[] = [
     course: "GAM300 (Team Game Production), DigiPen Singapore",
     year: "2025–2026",
     summary:
-      "Subject 404 is a narrative-driven 3D puzzle game where you play a robot escaping an abandoned factory, hacking electronics with power cores while evading the watchful eye of a malevolent AI. Built on The Umbral Void, a custom C++ engine our ~10-person team wrote from scratch, where I served as Graphics Lead.",
+      "Subject 404 is a 3D sci-fi perspective puzzle game where you play a robot escaping an abandoned factory, switching between first-person control and an overhead CCTV view to hack electronics with power cores while evading the watchful eye of a malevolent AI. Built on The Umbral Void, a custom C++ engine our ~10-person team wrote from scratch, where I served as Graphics Lead.",
     whatILearned: [
       "Built the engine's rendering pipeline as Graphics Lead: an ECS-based forward/deferred renderer, PBR shaders with image-based lighting (skybox, irradiance, BRDF LUT), and a bloom post-process stack",
       "Wrote the mesh, texture, and shader compilers that turned raw FBX/PNG assets into engine-ready formats, plus the static and skeletal animation system",
