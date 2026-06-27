@@ -28,6 +28,40 @@ export type Project = {
 // Drop screenshots/videos into public/projects/<slug>/ and reference them in `media` below.
 export const projects: Project[] = [
   {
+    slug: "subject-404",
+    title: "Subject 404",
+    category: "Academic",
+    course: "GAM300 (Team Game Production), DigiPen Singapore",
+    year: "2025–2026",
+    summary:
+      "Subject 404 is a narrative-driven 3D puzzle game where you play a robot escaping an abandoned factory, hacking electronics with power cores while evading the watchful eye of a malevolent AI. Built on The Umbral Void, a custom C++ engine our ~10-person team wrote from scratch, where I served as Graphics Lead.",
+    whatILearned: [
+      "Built the engine's rendering pipeline as Graphics Lead: an ECS-based forward/deferred renderer, PBR shaders with image-based lighting (skybox, irradiance, BRDF LUT), and a bloom post-process stack",
+      "Wrote the mesh, texture, and shader compilers that turned raw FBX/PNG assets into engine-ready formats, plus the static and skeletal animation system",
+      "Implemented gameplay-tied VFX (CRT/CCTV scanlines, night vision, low-battery glitch, hit-stun, death) and frustum culling for performance",
+      "Continuously extended the ImGui editor (new component panels, search, undo/redo) and wrote C# gameplay scripts for enemy AI and animation state transitions",
+      "Did cross-team debugging across a ~10-person team, since most other systems depended on graphics and the editor",
+    ],
+    tech: ["C++", "OpenGL", "EnTT", "Jolt Physics", "C# (Mono)", "Dear ImGui"],
+    media: [
+      {
+        type: "image",
+        src: "/projects/subject-404/thumbnail.jpg",
+        alt: "Subject 404 gameplay screenshot showing a short-circuit puzzle above a hazard pit",
+      },
+      {
+        type: "video",
+        src: "/projects/subject-404/gameplay.mp4",
+        alt: "Subject 404 gameplay clip",
+      },
+      {
+        type: "video",
+        src: "/projects/subject-404/editor.mp4",
+        alt: "The Umbral Void editor in use",
+      },
+    ],
+  },
+  {
     slug: "geo-surfers",
     title: "Geo Surfers",
     category: "Academic",
