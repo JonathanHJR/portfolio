@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { siteUrl } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +16,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jing Rui — Portfolio",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Jing Rui — Portfolio",
+    template: "%s — Jing Rui",
+  },
   description: "A showcase of my school projects.",
+  openGraph: {
+    title: "Jing Rui — Portfolio",
+    description: "A showcase of my school projects.",
+    url: siteUrl,
+    siteName: "Jing Rui — Portfolio",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jing Rui — Portfolio",
+    description: "A showcase of my school projects.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

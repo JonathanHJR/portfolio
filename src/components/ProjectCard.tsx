@@ -41,7 +41,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </p>
         <p className="mt-3 text-sm">{project.summary}</p>
         <div className="mt-4 flex flex-wrap gap-2">
-          {project.tech.map((t) => (
+          {project.tech.slice(0, 4).map((t) => (
             <span
               key={t}
               className="rounded-full bg-accent-soft px-2 py-1 text-xs text-accent"
@@ -49,6 +49,11 @@ export default function ProjectCard({ project }: { project: Project }) {
               {t}
             </span>
           ))}
+          {project.tech.length > 4 && (
+            <span className="rounded-full bg-accent-soft px-2 py-1 text-xs text-accent">
+              +{project.tech.length - 4} more
+            </span>
+          )}
         </div>
       </div>
     </Link>

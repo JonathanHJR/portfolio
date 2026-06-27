@@ -1,11 +1,43 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getProjectBySlug, projects } from "@/data/projects";
 import CategoryBadge from "@/components/CategoryBadge";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+
+  if (!project) {
+    return { title: "Project not found" };
+  }
+
+  const image = project.media.find((m) => m.type === "image");
+
+  return {
+    title: project.title,
+    description: project.summary,
+    openGraph: {
+      title: project.title,
+      description: project.summary,
+      images: image ? [{ url: image.src, alt: image.alt }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.summary,
+      images: image ? [image.src] : undefined,
+    },
+  };
 }
 
 export default async function ProjectPage({
