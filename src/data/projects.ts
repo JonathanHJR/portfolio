@@ -34,7 +34,7 @@ export const projects: Project[] = [
     course: "GAM300 (Team Game Production), DigiPen Singapore",
     year: "2025–2026",
     summary:
-      "Subject 404 is a 3D sci-fi perspective puzzle game where you play a robot escaping an abandoned factory, switching between first-person control and an overhead CCTV view to hack electronics with power cores while evading the watchful eye of a malevolent AI. Built on The Umbral Void, a custom C++ engine our 14-person team wrote from scratch, where I served as Graphics Lead.",
+      "A 3D sci-fi perspective puzzle game where you play a robot escaping an abandoned factory, switching between first-person control and an overhead CCTV view to hack electronics with power cores while evading the watchful eye of a malevolent AI. Built on The Umbral Void, a custom C++ engine I helped write from scratch as Graphics Lead.",
     whatILearned: [
       "Built the engine's rendering pipeline as Graphics Lead: an ECS-based forward/deferred renderer, PBR shaders with image-based lighting (skybox, irradiance, BRDF LUT), and a bloom post-process stack",
       "Wrote the mesh, texture, and shader compilers that turned raw FBX/PNG assets into engine-ready formats, plus the static and skeletal animation system",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     course: "CSD1401 (Team Project), DigiPen Singapore",
     year: "2023",
     summary:
-      "A 2D endless runner built in C with the CProcessing library, where the player dodges obstacles while the camera keeps scrolling forward. Made with a 5-person team for DigiPen's intro programming course.",
+      "A 2D endless runner built in C with the CProcessing library, where the player dodges obstacles while the camera keeps scrolling forward. Built as a team project for DigiPen's intro programming course.",
     whatILearned: [
       "Built the main menu, settings, character selection, and credits screens, plus a leaderboard with persistent save-file data",
       "Wired up score tracking, camera movement, and the game's music and sound effects",

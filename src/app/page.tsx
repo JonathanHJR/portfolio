@@ -22,13 +22,9 @@ export default function Home() {
           .
         </h1>
         <p className="mt-6 max-w-xl text-lg text-black/70 dark:text-white/70">
-          A short bio: what you&apos;re studying, what you&apos;re interested
-          in, and what kind of work you&apos;re looking for. Replace this
-          paragraph in{" "}
-          <code className="rounded bg-black/5 px-1 text-sm dark:bg-white/10">
-            src/app/page.tsx
-          </code>
-          .
+          I&apos;m a Computer Science (Real-Time Interactive Simulation)
+          student at SIT-DigiPen, currently focused on infrastructure and
+          cloud engineering roles.
         </p>
         <div className="mt-8 flex gap-4">
           <Link
