@@ -62,7 +62,65 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "cs380-ai",
+    slug: "aws-help-desk",
+    title: "Serverless Help Desk",
+    category: "Academic",
+    course: "CSD3156 (Team Project), DigiPen Singapore",
+    year: "2026",
+    summary:
+      "A serverless help desk on AWS where users submit support tickets and receive instant responses from a Gemini AI chatbot, while support agents manage tickets through an admin dashboard. The full stack — React frontend on S3+CloudFront, Python Lambdas behind REST and WebSocket API Gateway, DynamoDB, Cognito auth, SES email, and WAF — is deployed via AWS SAM and continuously delivered through GitHub Actions.",
+    whatILearned: [
+      "Architected the full serverless stack from scratch: React+Vite frontend on S3/CloudFront, Python Lambda functions behind REST and WebSocket API Gateway, and DynamoDB tables for tickets, chat history, and replies",
+      "Integrated Google Gemini as an AI chatbot backed by a Lambda, with WebSocket support so AI replies stream in real time without polling",
+      "Set up Cognito user pools with user/agent groups for role-based access, IAM least-privilege roles for each Lambda, and WAF rules on the CloudFront distribution for edge-level protection",
+      "Wired up SES email notifications that trigger on ticket status changes, and built a CI/CD pipeline with GitHub Actions that builds and deploys the SAM stack, bakes Cognito and API outputs into the React build, and invalidates the CloudFront cache on every push",
+      "Load-tested the live API with Locust, simulating concurrent user and agent traffic to verify Lambda auto-scaling behaviour under load",
+    ],
+    tech: ["React", "Python", "AWS Lambda", "API Gateway", "DynamoDB", "S3", "CloudFront", "Cognito", "AWS SAM", "GitHub Actions"],
+    media: [
+      {
+        type: "image",
+        src: "/projects/aws-help-desk/thumbnail.jpg",
+        alt: "Serverless Help Desk architecture diagram showing AWS Lambda, DynamoDB, Google Gemini, and SES",
+      },
+      {
+        type: "video",
+        src: "/projects/aws-help-desk/demo.mp4",
+        alt: "Serverless Help Desk demo: user login, ticket submission, AI chat, and agent dashboard",
+      },
+    ],
+  },
+  {
+    slug: "android-endless-runner",
+    title: "Wild Rush",
+    category: "Academic",
+    course: "CSD3156 (Team Project), DigiPen Singapore",
+    year: "2026",
+    summary:
+      "A 3D endless runner for Android where an animal character must jump over wooden fences or shrink through gap fences, rendered in real time with Google Filament. The player taps to jump, uses voice pitch to sprint or shrink, and waves at the front camera to clear a fog mechanic that gradually obscures the screen.",
+    whatILearned: [
+      "Built a 3D game on Android using Google Filament for real-time rendering, with a custom GameEngine handling entity lifecycles, obstacle spawning with a shuffle-bag randomiser, AABB collision detection, and animated scene elements like a sun orbit and bobbing clouds",
+      "Implemented pitch detection from scratch using autocorrelation on raw PCM audio (AudioRecord at 44.1 kHz) to map high pitch to a sprint speed boost and low pitch to a shrink action, with RMS volume thresholding to filter background noise",
+      "Built a front-camera motion detector using CameraX that computes frame-to-frame pixel differences on the Y plane to measure waving intensity, which reduces the in-game fog level",
+      "Structured the app with Jetpack Compose and a single-activity MVVM architecture — the Filament surface stays permanently in the background while Compose screens overlay on top, avoiding reloads on screen transitions",
+      "Added a built-in screen recorder using MediaProjectionManager with a foreground service, handling Android 14's stricter media projection permission model",
+    ],
+    tech: ["Kotlin", "Jetpack Compose", "Google Filament", "CameraX", "Android SDK"],
+    media: [
+      {
+        type: "image",
+        src: "/projects/android-endless-runner/thumbnail.jpg",
+        alt: "Wild Rush main menu showing the Shiba Inu character in a 3D farm environment",
+      },
+      {
+        type: "video",
+        src: "/projects/android-endless-runner/gameplay.mp4",
+        alt: "Wild Rush gameplay showing 3D endless runner with voice and camera controls",
+      },
+    ],
+  },
+  {
+    slug: "ai-in-games",
     title: "AI in Games",
     category: "Academic",
     course: "CS380 (Individual), DigiPen Singapore",
@@ -78,17 +136,17 @@ export const projects: Project[] = [
     media: [
       {
         type: "image",
-        src: "/projects/cs380-ai/thumbnail.jpg",
+        src: "/projects/ai-in-games/thumbnail.jpg",
         alt: "CS380 AI Framework showing terrain analysis heat map with agents and path arrows",
       },
       {
         type: "video",
-        src: "/projects/cs380-ai/pathfinding.mp4",
+        src: "/projects/ai-in-games/pathfinding.mp4",
         alt: "A* pathfinding and terrain analysis demo",
       },
       {
         type: "video",
-        src: "/projects/cs380-ai/behavior-tree.mp4",
+        src: "/projects/ai-in-games/behavior-tree.mp4",
         alt: "Behavior tree nodes and visual editor demo",
       },
     ],
