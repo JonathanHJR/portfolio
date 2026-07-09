@@ -62,6 +62,38 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "cs380-ai",
+    title: "CS380 — AI Programming",
+    category: "Academic",
+    course: "CS380, DigiPen Singapore",
+    year: "2025",
+    summary:
+      "Three C++ AI programming assignments built on the Rabin Engine framework, covering the core algorithms behind game AI: a behavior tree system with a visual node editor, a weighted A* pathfinder with multiple heuristics and path post-processing, and a terrain analysis system used for enemy vision and occupancy-map-driven search behavior.",
+    whatILearned: [
+      "Implemented a behavior tree node library from scratch — control-flow nodes (Sequencer, Selector, ParallelSequencer, RandomSelector), decorators (Delay, InvertedRepeater, RepeatFourTimes), and leaf nodes for agent movement and sound — then authored agent behaviors using the built-in visual tree editor",
+      "Built a weighted A* pathfinder supporting four heuristics (Manhattan, Euclidean, Octile, Chebyshev), with a precomputed neighbor cache to avoid per-frame wall checks, a vector-backed binary heap for the open list, and optional rubber banding and path smoothing post-processes",
+      "Wrote terrain analysis layers for openness (distance-to-wall), cell-to-cell line-of-sight visibility, and agent forward-cone vision, then drove enemy search behavior using exponential-decay occupancy maps — the enemy navigates toward the highest-probability last-seen cell when the player breaks line of sight",
+    ],
+    tech: ["C++", "DirectX 11"],
+    media: [
+      {
+        type: "image",
+        src: "/projects/cs380-ai/thumbnail.jpg",
+        alt: "CS380 AI Framework showing terrain analysis heat map with agents and path arrows",
+      },
+      {
+        type: "video",
+        src: "/projects/cs380-ai/pathfinding.mp4",
+        alt: "A* pathfinding and terrain analysis demo",
+      },
+      {
+        type: "video",
+        src: "/projects/cs380-ai/behavior-tree.mp4",
+        alt: "Behavior tree nodes and visual editor demo",
+      },
+    ],
+  },
+  {
     slug: "geo-surfers",
     title: "Geo Surfers",
     category: "Academic",
