@@ -65,7 +65,7 @@ export const projects: Project[] = [
     slug: "cs380-ai",
     title: "AI in Games",
     category: "Academic",
-    course: "CS380, DigiPen Singapore",
+    course: "CS380 (Individual), DigiPen Singapore",
     year: "2025",
     summary:
       "Three C++ AI programming assignments built on the Rabin Engine framework, covering the core algorithms behind game AI: a behavior tree system with a visual node editor, a weighted A* pathfinder with multiple heuristics and path post-processing, and a terrain analysis system used for enemy vision and occupancy-map-driven search behavior.",
