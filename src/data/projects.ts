@@ -63,7 +63,7 @@ export const projects: Project[] = [
   },
   {
     slug: "cs380-ai",
-    title: "CS380 — AI Programming",
+    title: "AI in Games",
     category: "Academic",
     course: "CS380, DigiPen Singapore",
     year: "2025",
