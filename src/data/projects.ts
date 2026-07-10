@@ -120,6 +120,34 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "computer-networks",
+    title: "Computer Networks",
+    category: "Academic",
+    course: "CSD2161 (Team Project), DigiPen Singapore",
+    year: "2025",
+    summary:
+      "Four networking assignments building up from raw TCP sockets to a multiplayer LAN game — a multi-client TCP echo server with peer routing, a hybrid TCP-control/UDP-transfer file server, a reliable UDP layer with Stop-and-Wait ARQ, and a 4-player networked Asteroids game with a UDP relay server and lock-step synchronisation.",
+    whatILearned: [
+      "Built a multi-client TCP echo server using Winsock2 from scratch — custom binary framing protocol (command IDs, length-prefixed payloads), thread-per-connection dispatching, and a connectedClients map that allows one client to route an echo to a specific other client by IP:port",
+      "Extended the server to a hybrid TCP/UDP file service: TCP handles the control plane (file listing and download requests) while a dedicated UDP socket on a second port transfers file data in 1024-byte chunks via sendto/recvfrom, with std::filesystem for directory traversal",
+      "Implemented Stop-and-Wait ARQ over UDP — custom 16-byte packet headers carrying session ID and byte offset, per-chunk ACK/retransmit loop with a 5-second socket timeout (SO_RCVTIMEO), turning an unreliable channel into a reliable ordered file transfer",
+      "Built a 4-player LAN Asteroids game on top of a prior single-player codebase: a standalone UDP relay server broadcasting per-frame game state to all clients, lock-step rendering that delays the frame until all ACKs arrive, and reconnection handling for dropped players",
+    ],
+    tech: ["C++", "Winsock2", "TCP", "UDP"],
+    media: [
+      {
+        type: "image",
+        src: "/projects/computer-networks/thumbnail.jpg",
+        alt: "Multiplayer Asteroids game running with four players over LAN",
+      },
+      {
+        type: "video",
+        src: "/projects/computer-networks/asteroids.mp4",
+        alt: "4-player networked Asteroids gameplay demo over LAN",
+      },
+    ],
+  },
+  {
     slug: "computer-graphics",
     title: "Computer Graphics",
     category: "Academic",
