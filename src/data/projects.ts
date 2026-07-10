@@ -65,7 +65,7 @@ export const projects: Project[] = [
     slug: "aws-help-desk",
     title: "Serverless Help Desk",
     category: "Academic",
-    course: "CSD3156 (Team Project), DigiPen Singapore",
+    course: "CSD3156 (Team Project), SIT",
     year: "2026",
     summary:
       "A serverless help desk on AWS where users submit support tickets and receive instant responses from a Gemini AI chatbot, while support agents manage tickets through an admin dashboard. The full stack — React frontend on S3+CloudFront, Python Lambdas behind REST and WebSocket API Gateway, DynamoDB, Cognito auth, SES email, and WAF — is deployed via AWS SAM and continuously delivered through GitHub Actions.",
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     slug: "android-endless-runner",
     title: "Wild Rush",
     category: "Academic",
-    course: "CSD3156 (Team Project), DigiPen Singapore",
+    course: "CSD3156 (Team Project), SIT",
     year: "2026",
     summary:
       "A 3D endless runner for Android where an animal character must jump over wooden fences or shrink through gap fences, rendered in real time with Google Filament. The player taps to jump, uses voice pitch to sprint or shrink, and waves at the front camera to clear a fog mechanic that gradually obscures the screen.",
