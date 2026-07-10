@@ -120,6 +120,62 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "computer-graphics",
+    title: "Computer Graphics",
+    category: "Academic",
+    course: "CSD2151 (Individual), DigiPen Singapore",
+    year: "2025",
+    summary:
+      "Seven OpenGL assignments building up the real-time rendering pipeline from scratch — starting with procedural GLSL shaders and ray tracing, through Blinn-Phong lighting and environment mapping, to a two-pass post-processing FBO pipeline and a three-pass deferred renderer with normal mapping.",
+    whatILearned: [
+      "Wrote a fully procedural GLSL fragment shader in the ShaderToy style: ray-marched an implicit surface using a signed-distance map(), applied a cosine-based colour palette, and layered an animated comet particle effect — all driven by a per-pixel ray cast with no geometry",
+      "Implemented ray–sphere intersection from first principles (quadratic formula, discriminant test) in both a C++ unit-test harness and a live GLSL fragment shader that renders a scene per pixel in real time",
+      "Built the Blinn-Phong reflectance model across three shading modes (flat, Gouraud vertex-shaded, per-fragment Phong-interpolated) and a spotlight variant, with interactive orbit/translate controls and switchable geometry",
+      "Wrote a cubemap sampler from scratch for environment mapping — loaded a six-face HDR light probe, rendered a skybox, planar reflection, and environment-mapped objects, with real-time keyboard control over reflection factor and refraction index",
+      "Combined PBR (roughness/metallic parameters), cel-shading with discrete Blinn-Phong light levels, procedural discard patterns, and linear distance fog into a single multi-effect fragment shader",
+      "Implemented a two-pass post-processing pipeline using an FBO: the scene renders to a texture in pass 0, and pass 1 applies screen-space filters toggled at runtime — separable Gaussian blur (vertical, horizontal, full) and Sobel edge detection with an adjustable threshold",
+      "Built a three-pass deferred renderer: pass 0 writes light direction, view direction, and UVs into G-buffer textures; subsequent passes read them back to apply normal-mapped Blinn-Phong lighting on an ogre mesh with a diffuse and normal map",
+    ],
+    tech: ["C++", "OpenGL", "GLSL", "GLFW", "GLM"],
+    media: [
+      {
+        type: "image",
+        src: "/projects/computer-graphics/thumbnail.jpg",
+        alt: "Ogre mesh rendered with normal mapping and deferred shading in OpenGL",
+      },
+      {
+        type: "video",
+        src: "/projects/computer-graphics/procedural.mp4",
+        alt: "Procedural ray-marched GLSL shader with animated comet effect",
+      },
+      {
+        type: "video",
+        src: "/projects/computer-graphics/raytracing.mp4",
+        alt: "Live GLSL ray-traced sphere scene",
+      },
+      {
+        type: "video",
+        src: "/projects/computer-graphics/shading.mp4",
+        alt: "Blinn-Phong shading modes: flat, Gouraud, per-fragment, spotlight",
+      },
+      {
+        type: "video",
+        src: "/projects/computer-graphics/envmap.mp4",
+        alt: "Environment mapping with HDR cubemap, skybox, and reflections",
+      },
+      {
+        type: "video",
+        src: "/projects/computer-graphics/postfx.mp4",
+        alt: "FBO post-processing: Gaussian blur and Sobel edge detection",
+      },
+      {
+        type: "video",
+        src: "/projects/computer-graphics/deferred.mp4",
+        alt: "Three-pass deferred shading with normal mapping on an ogre mesh",
+      },
+    ],
+  },
+  {
     slug: "ai-in-games",
     title: "AI in Games",
     category: "Academic",
