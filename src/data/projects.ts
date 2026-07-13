@@ -126,12 +126,12 @@ export const projects: Project[] = [
     course: "CSD2451 (Team Project), DigiPen Singapore",
     year: "2024–2025",
     summary:
-      "A cooperative 2D puzzle platformer where a Hermit Crab and a Sea Urchin must work together across 5 levels to find their way back to the ocean. Built on AWOLEngine, a custom C++ engine my 8-person team wrote from scratch, with ECS architecture, C# gameplay scripting via Mono, and a full Dear ImGui editor. I owned the particle system, input manager, and editor tooling.",
+      "A cooperative 2D puzzle platformer where a Hermit Crab and a Sea Urchin must work together across 5 levels to find their way back to the ocean. Built on AWOLEngine, a custom C++ engine my 8-person team wrote from scratch, with ECS architecture, C# gameplay scripting via Mono, and a full Dear ImGui editor. I started as Graphics Programmer then shifted to building the engine's animation and particle editors.",
     whatILearned: [
-      "Built the particle system from scratch — configurable emitters with per-particle lifetime, velocity, scale, and color, serialised to a custom .awolparticle JSON format that the editor can author and preview in real time",
-      "Implemented the engine's input manager over GLFW callbacks, providing frame-level pressed/held/released queries for both C++ engine systems and C# gameplay scripts running on the Mono runtime",
-      "Extended the Dear ImGui editor with component panels and particle-effect authoring tools, enabling designers to tweak emitter parameters live without recompiling",
-      "Shipped a complete game on a custom ECS engine with systems spanning physics, collision, animation, FMOD audio, RapidJSON scene serialisation, and C# scripting — coordinating across an 8-person team over two semesters",
+      "Built fullscreen/windowed toggling (F1), window icon loading via stb_image, and focus-based auto-pause — differentiating between manual pauses and automatic ones triggered by alt-tab or minimisation, so they don't clash when combined",
+      "Built the animation editor in Dear ImGui from scratch: real-time live preview, frame-by-frame strip display (5 frames per row), and a two-stage apply/save workflow so changes are previewed before being written back to the .awolani JSON file — avoiding unintended edits to every object sharing that animation",
+      "Built the particle editor in Dear ImGui: all emitter properties editable and previewed live, with save/load to .awolparticle JSON, looping toggle, and size-over-lifetime and alpha-over-lifetime curves added in later milestones",
+      "Created 4 rigged animation sets (3 coral variants, 1 sea urchin) by connecting static sprite sheets with bone-style rotation and draw-order keyframes, ensuring smooth looping with matching start and end frames",
     ],
     tech: ["C++", "OpenGL", "GLFW", "FMOD", "Mono (C#)", "Dear ImGui", "GLM"],
     media: [
