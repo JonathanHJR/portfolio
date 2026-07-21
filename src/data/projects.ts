@@ -201,6 +201,11 @@ export const projects: Project[] = [
       },
       {
         type: "video",
+        src: "/projects/computer-graphics/framework.mp4",
+        alt: "OpenGL framework demo: cursor position mapped to background colour channels",
+      },
+      {
+        type: "video",
         src: "/projects/computer-graphics/procedural.mp4",
         alt: "Procedural ray-marched GLSL shader with animated comet effect",
       },
