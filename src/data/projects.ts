@@ -221,6 +221,11 @@ export const projects: Project[] = [
       },
       {
         type: "video",
+        src: "/projects/computer-graphics/pbr.mp4",
+        alt: "PBR, cel-shading, and distance fog effects in a single shader",
+      },
+      {
+        type: "video",
         src: "/projects/computer-graphics/postfx.mp4",
         alt: "FBO post-processing: Gaussian blur and Sobel edge detection",
       },
