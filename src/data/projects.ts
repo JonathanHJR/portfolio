@@ -80,8 +80,8 @@ export const projects: Project[] = [
     media: [
       {
         type: "image",
-        src: "/projects/aws-help-desk/thumbnail.jpg",
-        alt: "Serverless Help Desk architecture diagram showing AWS Lambda, DynamoDB, Google Gemini, and SES",
+        src: "/projects/aws-help-desk/tickets.png",
+        alt: "Agent dashboard showing all tickets with status counts (open, in progress, resolved) and a filterable ticket table",
       },
       {
         type: "video",
@@ -92,11 +92,6 @@ export const projects: Project[] = [
         type: "image",
         src: "/projects/aws-help-desk/login.png",
         alt: "Help Desk login screen with email and password fields, served from CloudFront",
-      },
-      {
-        type: "image",
-        src: "/projects/aws-help-desk/tickets.png",
-        alt: "Agent dashboard showing all tickets with status counts (open, in progress, resolved) and a filterable ticket table",
       },
       {
         type: "image",
