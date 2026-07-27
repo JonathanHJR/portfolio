@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProjectBySlug, projects } from "@/data/projects";
 import CategoryBadge from "@/components/CategoryBadge";
+import GalleryLightbox from "@/components/GalleryLightbox";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -115,27 +115,7 @@ export default async function ProjectPage({
             .
           </div>
         ) : (
-          <div className="mt-3 grid gap-4 sm:grid-cols-2">
-            {project.media.map((m) =>
-              m.type === "image" ? (
-                <Image
-                  key={m.src}
-                  src={m.src}
-                  alt={m.alt}
-                  width={800}
-                  height={600}
-                  className="rounded-xl border border-black/10 dark:border-white/10"
-                />
-              ) : (
-                <video
-                  key={m.src}
-                  src={m.src}
-                  controls
-                  className="w-full rounded-xl border border-black/10 dark:border-white/10"
-                />
-              )
-            )}
-          </div>
+          <GalleryLightbox media={project.media} />
         )}
       </section>
     </div>
