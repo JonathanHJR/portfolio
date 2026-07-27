@@ -88,6 +88,50 @@ export const projects: Project[] = [
         src: "/projects/aws-help-desk/demo.mp4",
         alt: "Serverless Help Desk demo: user login, ticket submission, AI chat, and agent dashboard",
       },
+      {
+        type: "image",
+        src: "/projects/aws-help-desk/login.png",
+        alt: "Help Desk login screen with email and password fields, served from CloudFront",
+      },
+      {
+        type: "image",
+        src: "/projects/aws-help-desk/tickets.png",
+        alt: "Agent dashboard showing all tickets with status counts (open, in progress, resolved) and a filterable ticket table",
+      },
+      {
+        type: "image",
+        src: "/projects/aws-help-desk/edit_ticket_1.png",
+        alt: "Ticket detail view showing ticket description, Manage Ticket controls (status, priority, category), and the real-time conversation thread",
+      },
+      {
+        type: "image",
+        src: "/projects/aws-help-desk/edit_ticket_2.png",
+        alt: "Ticket detail showing the conversation thread, Suggest Reply button, attachments section, and activity log",
+      },
+    ],
+  },
+  {
+    slug: "jtc-data-analytics",
+    title: "Optimus Data Analytics",
+    category: "Work",
+    course: "JTC Corporation, Future of Building & Infrastructure Division",
+    year: "2026",
+    summary:
+      "A Streamlit-based analytics platform built during my internship at JTC Corporation, deployed on Airbase (GovTech's GCC-hosted PaaS), that processes government inspection and safety data exported from the Optimus project management system. The platform classifies free-text observations into a reusable taxonomy using Gemini AI, extracts structured fields from unstructured text, and aggregates data across multiple uploads into a Portfolio view with trend charts and outlier flagging — surfacing patterns that manual spreadsheet review would miss.",
+    whatILearned: [
+      "Designed a form-agnostic data pipeline using Streamlit and pandas — removed all per-form hardcoded logic in favour of generic column detection and AI-driven structure inference, making the system robust to unannounced schema changes across Optimus export types",
+      "Integrated the Gemini API for three distinct AI features: AI Insights (one-call prose summary), AI Classification (taxonomy induction + batched row classification), and AI Extraction (structured field extraction from free text) — each with retry-with-backoff logic for 429 rate limits and transient 5xx errors",
+      "Built a hybrid relational + JSONB Neon Postgres backend with a schema designed to handle multiple incompatible form schemas without migrations, wired into a full project/file management UI with cross-session result persistence",
+      "Deployed to Airbase (GCC) using a GDS-hardened Docker base image, resolving GCC-specific constraints: non-root container user, port injection via $PORT, and Streamlit config adjustments to prevent startup errors on a restricted filesystem",
+      "Wrote a Python scraping script to automate data extraction from the FulcrumHQ platform underlying Optimus, as an alternative to the manual Excel export workflow",
+    ],
+    tech: ["Python", "Streamlit", "pandas", "Plotly", "Gemini API", "PostgreSQL", "Docker", "Airbase (GCC)"],
+    media: [
+      {
+        type: "image",
+        src: "/projects/jtc-data-analytics/overview.png",
+        alt: "Optimus Data Analytics dashboard showing the Overview tab with a time-series trend chart (spike annotations at peaks), Records by Workflow bar chart, and KPI cards — running live on Airbase (GCC)",
+      },
     ],
   },
   {
