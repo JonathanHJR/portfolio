@@ -23,8 +23,10 @@ export default function Home() {
         </h1>
         <p className="mt-6 max-w-xl text-lg text-black/70 dark:text-white/70">
           I&apos;m a Computer Science (Real-Time Interactive Simulation)
-          student at SIT-DigiPen, currently focused on infrastructure and
-          cloud engineering roles.
+          student at SIT-DigiPen. I build across the stack — from low-level
+          systems and networking to cloud infrastructure and AI-assisted
+          applications — and I&apos;m open to software engineering and
+          infrastructure roles.
         </p>
         <div className="mt-8 flex gap-4">
           <Link
