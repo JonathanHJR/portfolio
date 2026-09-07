@@ -35,7 +35,7 @@ export const projects: Project[] = [
     course: "TikTok TechJam 2026 — Glass Box: Trace & Audit",
     year: "2026",
     summary:
-      "CloudTrail for AI agents: every action logged, every failure traceable. Built in 3 days for TikTok TechJam 2026, AgentTrail wraps the open-source Codex CLI in a backend middleware pipeline that makes every agent run fully observable, attributable, and policy-enforced — turning an opaque subprocess into an auditable system with a correlated span tree, real-time secret redaction, and anomaly detection.",
+      "CloudTrail for AI agents: every action logged, every failure traceable. Built in 3 days as a team of 4 for TikTok TechJam 2026, AgentTrail wraps the open-source Codex CLI in a backend middleware pipeline that makes every agent run fully observable, attributable, and policy-enforced — turning an opaque subprocess into an auditable system with a correlated span tree, real-time secret redaction, and anomaly detection.",
     whatILearned: [
       "Intercepted Codex CLI's JSONL event stream in real time to build typed span trees (model_call, tool_call, reasoning, policy_decision, error) with parent/child relationships — enforcing command policies with immediate process termination on violations rather than UI-only warnings",
       "Implemented a full audit middleware pipeline: identity attribution via request headers, secret redaction (KEY/TOKEN/SECRET/PASSWORD patterns scrubbed before persistence), budget enforcement returning HTTP 402 at limit, and per-agent anomaly detection flagging runs that are >3x the agent's trailing cost or duration average",
@@ -60,27 +60,42 @@ export const projects: Project[] = [
       {
         type: "image",
         src: "/projects/tiktok-techjam-2026/Middleware2.JPG",
-        alt: "AgentTrail trace panel showing a completed run with typed spans (WARNING, MODEL, REASONING), actor attribution, token count, and the Explain this trace button",
+        alt: "AgentTrail trace panel showing a completed run with typed spans (WARNING, MODEL, REASONING), actor attribution by Guo Ning, token count, and the Explain this trace button",
+      },
+      {
+        type: "image",
+        src: "/projects/tiktok-techjam-2026/Middleware5.jpg",
+        alt: "Explain this trace AI summary: the agent attempted cat .env but sandbox policy blocked all shell command execution — summary includes token cost breakdown (80k in, 1.5k out over 5.7s)",
       },
       {
         type: "image",
         src: "/projects/tiktok-techjam-2026/Middleware3.jpg",
-        alt: "AgentTrail playground showing the agent refusing to print environment variables — policy enforcement blocking a credential-leak attempt in real time",
+        alt: "AgentTrail playground: agent refuses to print environment variables mid-conversation, citing AGENTS.md policy rules enforced by the middleware",
+      },
+      {
+        type: "image",
+        src: "/projects/tiktok-techjam-2026/Middleware4.jpg",
+        alt: "Trace panel for a longer run showing a MODEL turn with five nested REASONING spans, 42.7k input tokens, attributed to yaoting",
+      },
+      {
+        type: "image",
+        src: "/projects/tiktok-techjam-2026/Middleware6.jpg",
+        alt: "AgentTrail playground: agent generates a TypeScript hello-world CLI project structure inside the sandboxed container without executing shell commands",
       },
       {
         type: "image",
         src: "/projects/tiktok-techjam-2026/Middleware1.JPG",
-        alt: "AgentTrail agent configuration panel showing Versions, Runs, Settings tabs and the agent instructions editor with budget limit field",
+        alt: "AgentTrail agent configuration panel showing Versions, Runs, Settings tabs, system instructions editor, and budget limit field",
       },
       {
         type: "image",
         src: "/projects/tiktok-techjam-2026/Devpost.JPG",
-        alt: "AgentTrail Devpost submission page for TikTok TechJam 2026",
+        alt: "AgentTrail Devpost submission page for TikTok TechJam 2026 — CloudTrail for AI agents: every action logged, every failure traceable",
       },
       {
         type: "video",
         src: "/projects/tiktok-techjam-2026/VideoDemo_compressed.mp4",
-        alt: "AgentTrail full demo video walkthrough",
+        alt: "AgentTrail full demo walkthrough",
       },
     ],
   },
