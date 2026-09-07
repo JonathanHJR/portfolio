@@ -4,12 +4,13 @@ export type ProjectMedia = {
   alt: string;
 };
 
-export type ProjectCategory = "Academic" | "Work" | "Personal";
+export type ProjectCategory = "Academic" | "Work" | "Personal" | "Hackathon";
 
 export const projectCategories: ProjectCategory[] = [
   "Academic",
   "Work",
   "Personal",
+  "Hackathon",
 ];
 
 export type Project = {
@@ -27,6 +28,62 @@ export type Project = {
 // Edit/replace these with your real projects.
 // Drop screenshots/videos into public/projects/<slug>/ and reference them in `media` below.
 export const projects: Project[] = [
+  {
+    slug: "tiktok-techjam-2026",
+    title: "AgentTrail",
+    category: "Hackathon",
+    course: "TikTok TechJam 2026 — Glass Box: Trace & Audit",
+    year: "2026",
+    summary:
+      "CloudTrail for AI agents: every action logged, every failure traceable. Built in 3 days for TikTok TechJam 2026, AgentTrail wraps the open-source Codex CLI in a backend middleware pipeline that makes every agent run fully observable, attributable, and policy-enforced — turning an opaque subprocess into an auditable system with a correlated span tree, real-time secret redaction, and anomaly detection.",
+    whatILearned: [
+      "Intercepted Codex CLI's JSONL event stream in real time to build typed span trees (model_call, tool_call, reasoning, policy_decision, error) with parent/child relationships — enforcing command policies with immediate process termination on violations rather than UI-only warnings",
+      "Implemented a full audit middleware pipeline: identity attribution via request headers, secret redaction (KEY/TOKEN/SECRET/PASSWORD patterns scrubbed before persistence), budget enforcement returning HTTP 402 at limit, and per-agent anomaly detection flagging runs that are >3x the agent's trailing cost or duration average",
+      "Built agent versioning that snapshots configuration on every edit and attaches the version at send time, so run history stays honest after changes — with a version-diff banner and side-by-side comparison in the trace panel",
+      "Designed a custom JSON database with atomic writes (write-to-temp-then-rename), a serial mutation queue to prevent concurrent write corruption, and an 8-step forward-only migration pipeline",
+      "Containerised each Codex turn in a disposable Docker container with CPU/memory/PID limits, --network none, and --cap-drop ALL for a meaningful sandbox boundary; provisioned the deployment environment on Volcengine ECS via Terraform",
+      "Built the React SPA trace panel to reconstruct parent/child span trees client-side from a flat array with parentId links, with a failure-branch pruning filter and an on-demand 'Explain this trace' call to the Ark Responses API",
+    ],
+    tech: [
+      "TypeScript",
+      "React 19",
+      "Node.js",
+      "Fastify",
+      "Zod",
+      "Volcengine Ark API",
+      "OpenAI Codex CLI",
+      "Docker",
+      "Terraform",
+      "Volcengine ECS",
+    ],
+    media: [
+      {
+        type: "image",
+        src: "/projects/tiktok-techjam-2026/Middleware2.JPG",
+        alt: "AgentTrail trace panel showing a completed run with typed spans (WARNING, MODEL, REASONING), actor attribution, token count, and the Explain this trace button",
+      },
+      {
+        type: "image",
+        src: "/projects/tiktok-techjam-2026/Middleware3.jpg",
+        alt: "AgentTrail playground showing the agent refusing to print environment variables — policy enforcement blocking a credential-leak attempt in real time",
+      },
+      {
+        type: "image",
+        src: "/projects/tiktok-techjam-2026/Middleware1.JPG",
+        alt: "AgentTrail agent configuration panel showing Versions, Runs, Settings tabs and the agent instructions editor with budget limit field",
+      },
+      {
+        type: "image",
+        src: "/projects/tiktok-techjam-2026/Devpost.JPG",
+        alt: "AgentTrail Devpost submission page for TikTok TechJam 2026",
+      },
+      {
+        type: "video",
+        src: "/projects/tiktok-techjam-2026/VideoDemo_compressed.mp4",
+        alt: "AgentTrail full demo video walkthrough",
+      },
+    ],
+  },
   {
     slug: "subject-404",
     title: "Subject 404",
